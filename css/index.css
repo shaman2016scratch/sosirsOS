@@ -13,7 +13,6 @@ body {
 
 .top-panel a {
     color: #138ce0;
-    text-decoration: none;
 }
 
 h1.pageTitle {
@@ -32,4 +31,8 @@ h1.pageTitle {
 
 .centeralText {
     text-align: center;
+}
+
+a {
+    text-decoration: none;
 }
