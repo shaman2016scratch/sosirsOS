@@ -36,3 +36,7 @@ h1.pageTitle {
 a {
     text-decoration: none;
 }
+
+leftText {
+    text-align: left;
+}
