@@ -7,6 +7,8 @@ body {
     text-align: center;
     background-color: #131de0;
     color: #138ce0;
+    padding-top: 6px;
+    padding-bottom: 6px;
 }
 
 .top-panel a {
@@ -20,7 +22,7 @@ h1.pageTitle {
 }
 
 .menu1 {
-    padding: 35px;
+    padding: 25px;
     background-color: #d6d19b;
     border-style: solid;
     border-color: #6c6947;
