@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>sosirsOS Repositories</title>
+        <link rel="stylesheet" href="../css/index.css">
+    </head>
+    <body>
+        <div class="top-panel"><a href="../">Main page</a></div>
+        <script src="../js/tp.js"></script>
+        <h1 class="pageTitle">sosirsOS Repositories</h1>
+        <div id="content">Please, enable JavaScript</div>
+        <script>
+            function valueFromPath(obj, array) {
+                return array.reduce((val, key) => {
+                    if (val === null || val === undefined) {
+                        return undefined
+                    }
+                    return val[key]
+                }, obj)
+            }
+            const url = new URL(window.location)
+            const sp = url.searchParams
+            const path = sp.get("path")
+            const data = await (await fetch('https://shaman2016scratch.github.io/sosirsOS/repositories/index.json')).json()
+            const data2 = valueFromPath(data, path.split('/'))
+        </script>
+    </body>
+</html>
