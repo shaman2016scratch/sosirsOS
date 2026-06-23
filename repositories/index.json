@@ -4,7 +4,7 @@
             "config": {
                 "description": "Конфигурация к пакетам DTSO",
                 "date": "23.06.26"
-            },
+            }
         },
         "SOPLAY-APPS": {
             "config": {
