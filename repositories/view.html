@@ -22,7 +22,7 @@
             const branch = sp.get(branch)
             const path = sp.get("path")
             const type = sp.get("type")
-            const data = await (await fetch('https://shaman2016scratch.github.io/sosirsOS/repositories/${branch}.json')).json()
+            const data = await (await fetch(`https://shaman2016scratch.github.io/sosirsOS/repositories/${branch}.json`)).json()
             const data2 = valueFromPath(data, path.split('/'))
             let content = `<p>Ветка: <a href='https://shaman2016scratch.github.io/sosirsOS/repositories/view.html?path=null&type=branch&branch=index'>index</a></p>`
             if (type === 'branch') {
