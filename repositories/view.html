@@ -20,7 +20,7 @@
                 }
                 const url = new URL(window.location)
                 const sp = url.searchParams
-                const branch = sp.get(branch)
+                const branch = sp.get("branch")
                 const path = sp.get("path")
                 const type = sp.get("type")
                 const data = await (await fetch(`https://shaman2016scratch.github.io/sosirsOS/repositories/${branch}.json`)).json()
