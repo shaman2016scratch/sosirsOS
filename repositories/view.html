@@ -43,7 +43,7 @@
                     const repoGroup2 = data.pub['SOPLAY-APPS']
                     const repoGroup1k = Object.keys(repoGroup1)
                     const repoGroup2k = Object.keys(repoGroup2)
-                    for(let i = 0; i < repoGroup1k; i++) {
+                    for(let i = 0; i <= repoGroup1k; i++) {
                         content += `
                             <tr>
                                 <td>${repoGroup1k[i]}</td>
@@ -57,7 +57,7 @@
                             <td>pub/SOPLAY-APPS</td>
                         </tr>
                     `
-                    for(let i = 0; i < repoGroup2k; i++) {
+                    for(let i = 0; i <= repoGroup2k; i++) {
                         content += `
                             <tr>
                                 <td>${repoGroup2k[i]}</td>
