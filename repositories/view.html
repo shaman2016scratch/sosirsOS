@@ -9,68 +9,71 @@
         <h1 class="pageTitle">sosirsOS Repositories</h1>
         <div id="content">Please, enable JavaScript</div>
         <script>
-            function valueFromPath(obj, array) {
-                return array.reduce((val, key) => {
-                    if (val === null || val === undefined) {
-                        return undefined
+            async function index() {
+                function valueFromPath(obj, array) {
+                    return array.reduce((val, key) => {
+                        if (val === null || val === undefined) {
+                            return undefined
+                        }
+                        return val[key]
+                    }, obj)
+                }
+                const url = new URL(window.location)
+                const sp = url.searchParams
+                const branch = sp.get(branch)
+                const path = sp.get("path")
+                const type = sp.get("type")
+                const data = await (await fetch(`https://shaman2016scratch.github.io/sosirsOS/repositories/${branch}.json`)).json()
+                const data2 = valueFromPath(data, path.split('/'))
+                let content = `<p>Ветка: <a href='https://shaman2016scratch.github.io/sosirsOS/repositories/view.html?path=null&type=branch&branch=index'>index</a></p>`
+                if (type === 'branch') {
+                    content += `
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th>Имя</th>
+                                    <th>Описание</th>
+                                    <th>Дата</th>
+                                </tr>
+                                <tr>
+                                    <td>pub/DTSO-PKGS</td>
+                                </tr>
+                    `
+                    const repoGroup1 = data.pub['DTSO-PKGS']
+                    const repoGroup2 = data.pub['SOPLAY-APPS']
+                    const repoGroup1k = Object.keys(repoGroup1)
+                    const repoGroup2k = Object.keys(repoGroup2)
+                    for(let i = 0; i < repoGroup1k; i++) {
+                        content += `
+                            <tr>
+                                <td>${repoGroup1k[i]}</td>
+                                <td>${repoGroup1[repoGroup1k[i]].description}</td>
+                                <td>${repoGroup1[repoGroup1k[i]].date}</td>
+                            </tr>
+                        `
                     }
-                    return val[key]
-                }, obj)
-            }
-            const url = new URL(window.location)
-            const sp = url.searchParams
-            const branch = sp.get(branch)
-            const path = sp.get("path")
-            const type = sp.get("type")
-            const data = await (await fetch(`https://shaman2016scratch.github.io/sosirsOS/repositories/${branch}.json`)).json()
-            const data2 = valueFromPath(data, path.split('/'))
-            let content = `<p>Ветка: <a href='https://shaman2016scratch.github.io/sosirsOS/repositories/view.html?path=null&type=branch&branch=index'>index</a></p>`
-            if (type === 'branch') {
-                content += `
-                    <table>
-                        <tbody>
-                            <tr>
-                                <th>Имя</th>
-                                <th>Описание</th>
-                                <th>Дата</th>
-                            </tr>
-                            <tr>
-                                <td>pub/DTSO-PKGS</td>
-                            </tr>
-                `
-                const repoGroup1 = data.pub['DTSO-PKGS']
-                const repoGroup2 = data.pub['SOPLAY-APPS']
-                const repoGroup1k = Object.keys(repoGroup1)
-                const repoGroup2k = Object.keys(repoGroup2)
-                for(let i = 0; i < repoGroup1k; i++) {
                     content += `
                         <tr>
-                            <td>${repoGroup1k[i]}</td>
-                            <td>${repoGroup1[repoGroup1k[i]].description}</td>
-                            <td>${repoGroup1[repoGroup1k[i]].date}</td>
+                            <td>pub/SOPLAY-APPS</td>
                         </tr>
                     `
-                }
-                content += `
-                    <tr>
-                        <td>pub/SOPLAY-APPS</td>
-                    </tr>
-                `
-                for(let i = 0; i < repoGroup2k; i++) {
+                    for(let i = 0; i < repoGroup2k; i++) {
+                        content += `
+                            <tr>
+                                <td>${repoGroup2k[i]}</td>
+                                <td>${repoGroup2[repoGroup2k[i]].description}</td>
+                                <td>${repoGroup2[repoGroup2k[i]].date}</td>
+                            </tr>
+                        `
+                    }
                     content += `
-                        <tr>
-                            <td>${repoGroup2k[i]}</td>
-                            <td>${repoGroup2[repoGroup2k[i]].description}</td>
-                            <td>${repoGroup2[repoGroup2k[i]].date}</td>
-                        </tr>
+                        </tbody>
+                        </table>
                     `
+                    document.getElementById('content').innerHTML = content
                 }
-                content += `
-                    </tbody>
-                    </table>
-                `
-                document.getElementById('content').innerHTML = content
             }
+            index()
         </script>
     </body>
 </html>
