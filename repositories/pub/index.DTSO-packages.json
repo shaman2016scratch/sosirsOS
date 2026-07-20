@@ -1,0 +1,15 @@
+{
+    "name": "DTSO-PKG-LIST",
+    "apis": {},
+    "rules": {
+        "isView": true,
+        "isEdit": false
+    },
+    "commits": [],
+    "files": [
+        "list.txt",
+        "12",
+        "",
+        []
+    ]
+}
