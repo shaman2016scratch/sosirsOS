@@ -1,6 +1,8 @@
 {
     "name": "DTSO-PKG-LIST",
-    "apis": {},
+    "apis": {
+        "view": "https://raw.githubusercontent.com/shaman2016scratch/sosirsOS/{API_ID}/repositories/pub/index.DTSO-packages.sovms"
+    },
     "rules": {
         "isView": true,
         "isEdit": false
@@ -9,7 +11,8 @@
         {
             "id": "000000",
             "title": "Init",
-            "date": "2026-07-20T20:51:02.229Z"
+            "date": "2026-07-20T20:51:02.229Z",
+            "api_id": "00a78c26c2afb67363e3f4fb3d5977868e0e32c5"
         }
     ],
     "files": [
