@@ -15,6 +15,9 @@
             "API_ID": "b74acfe42249effb723582f28cda4bf624949933"
         }
     ],
+    "commit": {
+        "000000": 0
+    },
     "files": [
         "list.txt",
         "12",
