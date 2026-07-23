@@ -1,0 +1,29 @@
+{
+    "name": "SOWEGB",
+    "apis": {
+        "view": "https://raw.githubusercontent.com/shaman2016scratch/sosirsOS/{API_ID}/repositories/pub/index.SOWEB.sovms"
+    },
+    "rules": {
+        "isView": true,
+        "isEdit": false
+    },
+    "commits": [
+        {
+            "id": "000000",
+            "title": "Init",
+            "date": "2026-07-23T11:12:31.468Z",
+            "API_ID": "..."
+        }
+    ],
+    "files": [
+        "html-parser.js",
+        "37",
+        "src/",
+        "async function htmlParser(html) { return html.split(\"\n\") }",
+        "tag-parser.js",
+        "37",
+        "src/",
+        "async function parseMiniTag(tag) { return tag.split(\"<\")[1].split(\"/>\")[0] }; async function parseTag(tag) { const tagBody = tag.split(\"<\")[1].split(\">\")[0]; const tagBodyParsed = tagBody.split(\" \"); const tagName = tagBodyParsed[0]; const content = tag.split(`<${tagBody}>`)[1].split(`</${tagName}>`)[0]; return [tagBody, tagName, content] }; async function parseTagBody(tagBody) { return tagBody.split(' ') }"
+    ],
+    "url": "https://shaman2016scratch.github.io/sosirsOS/repositories/pub/index.SOWEB.sovms"
+}
