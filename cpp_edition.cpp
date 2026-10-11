@@ -1,11 +1,11 @@
 #include <iostream>
 using namespace std;
 int main () {
-    string system = "sosirsOS C++ Edition", version = "1.0.0", versionAt = "11.10.2026";
+    string system = "sosirsOS C++ Edition", version = "1.0.1", versionAt = "11.10.2026", author = "polzovatel_8787";
 
     string password = "", name = "";
     string inputtedPass;
-    cout << "sosirsOS C++ Edition 1.0.0 (11.10.2026)\n";
+    cout << system << " " << version << " (" << versionAt << ") by " << author << endl;
     if (password == "") {
         cout << "Your name?\n";
         cin >> name;
@@ -31,7 +31,7 @@ int main () {
                 cout << "System: ";
                 cout << system;
                 cout << "\nVersion: ";
-                cout << version;
+                cout << version << " (" << versionAt << ")";
                 cout << "\nName of user: ";
                 cout << name;
             } else if (command == "exit") {
