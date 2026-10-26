@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 int main () {
-    string system = "sosirsOS C++ Edition", version = "1.0.2", versionAt = "12.10.2026", author = "polzovatel_8787";
+    string system = "sosirsOS C++ Edition", version = "1.0.3", versionAt = "26.10.2026", author = "polzovatel_8787";
 
     string password = "", name = "";
     string inputtedPass;
@@ -15,7 +15,7 @@ int main () {
     cout << "LOGIN\nEnter password\n";
     cin >> inputtedPass;
     if (password == inputtedPass) {
-        cout << "Starting sosirsOS C++ Edition...\n";
+        cout << "Starting " << system << "...\n";
         bool active = true;
         cout << "enter 'help' for help";
         while (active) {
@@ -24,7 +24,7 @@ int main () {
             cin >> command;
             if (command == "help") {
                 cout << "Help for " << system << " Console\n";
-                cout << "fetch - system info\nexit - exit\ngui - gui\nprint - print text";
+                cout << "fetch - system info\nexit - exit\ngui - gui\nprint - print text\nprintint - print int";
             } else if (command == "fetch") {
                 cout << "System: " << system;
                 cout << "\nVersion: " << version << " (" << versionAt << ")";
@@ -36,7 +36,10 @@ int main () {
             } else if (command == "print") {
                 string out;
                 cout << (cin >> out, out);
-            } else {
+             } else if (command == "printint") {
+                int out;
+                cout << (cin >> out, out);
+             } else {
                 cout << "Command '" << command << "' not found";
             }
         }
