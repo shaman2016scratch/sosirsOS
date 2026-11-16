@@ -64,10 +64,10 @@
         ]
     ],
     "tags": {
-        "2.0.0": {
-            "notes": "Support: sosirsOS 1.2.0 DEMO 8.6+",
-            "date": 0,
-            "commit": "???",
+        "2.0.0-prototype-1": {
+            "notes": "Support: sosirsOS 1.2.0 DEMO 8.6 beta-test 1+",
+            "date": 1794820532993,
+            "commit": "000000",
             "branch": "index"
         }
     },
